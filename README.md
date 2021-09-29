@@ -1,2 +1,2 @@
 # cascade
-Mobile app for Cascade Bicycle Clug
+Mobile app for Cascade Bicycle Club
