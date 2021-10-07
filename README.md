@@ -50,13 +50,13 @@ In 2015, UW students built a Group Ride Finder app (https://cascade.org/about-fr
 <!-- GETTING STARTED -->
 ## Getting Started
 
-**NOTE:** _Currently only the Android App is being developed or optimized at this time._
+**NOTE:** _Only the Android App is being developed or optimized at this time._
 
 ### Develop
 
 Prerequisites:
 - Make sure you have at least `npm: 7.#.#` and `node: 14.#.#`
-- Have the larest Android Studio installed
+- Have the latest Android Studio installed
 
 1. Clone the repo
    ```sh
