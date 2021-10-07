@@ -62,7 +62,7 @@ Prerequisites:
    ```sh
    git clone https://github.com/brendenwest/cascade
    ```
-2. Install NPM packages
+2. Install NPM packages 
    ```sh
    npm install
    ```
@@ -70,7 +70,7 @@ Prerequisites:
    ```sh
    npx react-native start
    ```
-4. Start Android App
+4. Start Android App _(new terminal)_
    ```sh
    npx react-native run-android
    ```
