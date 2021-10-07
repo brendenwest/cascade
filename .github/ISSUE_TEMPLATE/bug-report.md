@@ -19,10 +19,10 @@ Steps to reproduce the behavior:
 4. See error
 
 ### Screenshots
-If applicable, add screenshots to help explain your problem.
+_If applicable, add screenshots to help explain your problem._
 
 ### Additional context
-Add any other context about the problem here.
+_Add any other context about the problem here._
 
 ### User Information
  - Device: [e.g. Mobile, PC]
