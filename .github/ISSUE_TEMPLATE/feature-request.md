@@ -8,13 +8,13 @@ assignees: ''
 ---
 
 ### The Feature
-A clear and concise description of what the feature would be.
+_A clear and concise description of what the feature would be._
 
 ### Why?
-Is your feature request related to a problem? How will this feature improve the application? Please describe. Ex. I'm always frustrated when [...]
+_Is your feature request related to a problem? How will this feature improve the application? Please describe. Ex. I'm always frustrated when [...]_
 
 ### Solution(s)
-A clear and concise description of possible solution(s) to create this feature.
+_A clear and concise description of possible solution(s) to create this feature._
 
 ### Additional context
-Add any other context, screenshots or solutions about the feature request here.
+_Add any other context, screenshots or solutions about the feature request here._

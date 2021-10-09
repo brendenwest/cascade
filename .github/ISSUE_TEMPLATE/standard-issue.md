@@ -6,13 +6,11 @@ labels: task
 assignees: ''
 
 ---
-
-### User Story
-As a [USER], I want to [GOAL] so I can [MOTIVATION].
+### Description 
+_A clear and concise description of what the task is._
 
 ### Context / Additional Information
-A clear and concise description of what the issue is.
+_A clear and concise description of what the issue is._
 
 ### Acceptance Criteria
-- [ ]
 - [ ]

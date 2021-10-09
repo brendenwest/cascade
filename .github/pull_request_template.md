@@ -1,8 +1,8 @@
 ## Description
-* What prompted this code change?
-* Link any relevant issues.
-* Include screenshots if needed. 
-* Describe rationale for big decisions.
+* _What prompted this code change?_
+* _Link any relevant issues._
+* _Include screenshots if needed._ 
+* _Describe rationale for big decisions._
 
 ## To Test
-1. *provide a checklist or list of instructions to help reviewers know what they are looking for*
+1. _provide a checklist or list of instructions to help reviewers know what they are looking for_
