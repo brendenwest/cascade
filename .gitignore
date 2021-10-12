@@ -60,5 +60,5 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
-#ios
-ios/
+package-lock.json
+
