@@ -5,36 +5,38 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-const App = () => (
-  <SafeAreaView style={styles.container}>
-    <View>
-      <Text style={styles.title}>
-        Home View
-      </Text>
-    </View>
+const App = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>
+          Home View
+        </Text>
+      </View>
 
-    <Separator />
+      <Separator />
 
-    <View>
-      <Text style={styles.title}>
-        Live interactive section of the screen. Rotates between "Join" and "Daily Featured Rides"
-      </Text>
-    </View>
+      <View>
+        <Text style={styles.title}>
+          Live interactive section of the screen. Rotates between "Join" and "Daily Featured Rides"
+        </Text>
+      </View>
 
-    <Separator />
+      <Separator />
 
-    <View style={styles.fixToText}>
-      <Button
-        title="Calendar"
-        onPress={() => Alert.alert('Opening the Calendar')}
-      />
-      <Button
-        title="Blog"
-        onPress={() => Alert.alert('Opening the Blog')}
-      />
-    </View>
-  </SafeAreaView>
-);
+      <View style={styles.fixToText}>
+        <Button
+          title="Calendar"
+          onPress={() => Alert.alert('Opening the Calendar')}
+        />
+        <Button
+          title="Blog"
+          onPress={() => Alert.alert('Opening the Blog')}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
