@@ -1,9 +1,9 @@
 import React from 'react';
-import HommeScreen from './components/screens/HomeScreen/HomeScreen';
+import HomeScreen from './components/screens/HomeScreen/HomeScreen';
 
 const App = () => {
   return (
-    <HommeScreen />
+    <HomeScreen />
   )
 };
 

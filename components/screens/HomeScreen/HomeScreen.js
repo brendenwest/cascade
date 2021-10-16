@@ -1,13 +1,13 @@
 import React from 'react';
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
+import { StyleSheet, Button, View, Text, Alert } from 'react-native';
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
-const App = () => {
+const HomeScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View>
         <Text style={styles.title}>
           Home View
@@ -34,7 +34,7 @@ const App = () => {
           onPress={() => Alert.alert('Opening the Blog')}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen;
