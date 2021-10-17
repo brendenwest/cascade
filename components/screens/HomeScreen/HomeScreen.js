@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Button, View, Text, Alert } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Text, Alert } from 'react-native';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Separator = () => (
   <View style={styles.separator} />
@@ -7,7 +9,7 @@ const Separator = () => (
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+   <View style={styles.container}>
       <View>
         <Text style={styles.title}>
           Home View
@@ -26,11 +28,23 @@ const HomeScreen = () => {
 
       <View style={styles.fixToText}>
         <Button
-          title="Calendar"
+          title=" Calendar"
+          icon={
+            <Icon
+            name="calendar"
+            size={20}
+            color="white"
+            />  }
           onPress={() => Alert.alert('Opening the Calendar')}
         />
         <Button
-          title="Blog"
+          title=" Blog"
+          icon={
+          <Icon
+          name="podcast"
+          size={20}
+          color="white"
+          />  }
           onPress={() => Alert.alert('Opening the Blog')}
         />
       </View>
