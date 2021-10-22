@@ -1,11 +1,11 @@
 import React from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import HomeScreen from './components/screens/HomeScreen/HomeScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { HomeStack } from './components/routes/Stacks';
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <HomeScreen />
+      <HomeStack />
     </SafeAreaProvider>
   );
 };

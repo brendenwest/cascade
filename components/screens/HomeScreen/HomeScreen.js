@@ -1,29 +1,29 @@
 import React from 'react';
-import { styles } from './HomeStyleSheet';
+import { Styles } from './HomeStyleSheet';
 import { View, Text, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <View style={Styles.container}>
       <View>
-        <Text style={styles.title}>
+        <Text style={Styles.title}>
           Home View
         </Text>
       </View>
 
-      <View style={styles.separator} />
+      <View style={Styles.separator} />
 
       <View>
-        <Text style={styles.title}>
+        <Text style={Styles.title}>
           Live interactive section of the screen. Rotates between "Join" and "Daily Featured Rides"
         </Text>
       </View>
 
-      <View style={styles.separator} />
+      <View style={Styles.separator} />
 
-      <View style={styles.fixToText}>
+      <View style={Styles.fixToText}>
         <Button
           title=" Calendar"
           icon={
