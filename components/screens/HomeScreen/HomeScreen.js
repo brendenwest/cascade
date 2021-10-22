@@ -4,7 +4,7 @@ import { View, Text, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       <View>
@@ -32,7 +32,7 @@ const HomeScreen = () => {
               size={20}
               color="white"
             />}
-          onPress={() => Alert.alert('Opening the Calendar')}
+          onPress={() => navigation.navigate('Calendar')}
         />
         <Button
           title=" Blog"
