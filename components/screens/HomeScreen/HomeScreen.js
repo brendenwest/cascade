@@ -1,8 +1,6 @@
 import React from 'react';
 import { Styles } from './HomeStyleSheet';
-import { View, Text, Alert } from 'react-native';
-import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { View, Text } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -22,29 +20,6 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       <View style={Styles.separator} />
-
-      <View style={Styles.fixToText}>
-        <Button
-          title=" Calendar"
-          icon={
-            <Icon
-              name="calendar"
-              size={20}
-              color="white"
-            />}
-          onPress={() => navigation.navigate('Calendar')}
-        />
-        <Button
-          title=" Blog"
-          icon={
-            <Icon
-              name="podcast"
-              size={20}
-              color="white"
-            />}
-          onPress={() => Alert.alert('Opening the Blog')}
-        />
-      </View>
     </View>
   );
 };
