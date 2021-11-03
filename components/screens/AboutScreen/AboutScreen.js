@@ -8,7 +8,7 @@ const AboutScreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView style={Styles.container} contentContainerStyle={{ flexGrow: 1 }}>
-        <Text h2 style={Styles.aboutText}>About Cascade</Text>
+        <Text h2 style={Styles.aboutText}>Cascade</Text>
         <Text p >Cascade Bicycle Club, the nation’s largest statewide bicycling nonprofit, serves bike riders of all ages, races, genders, income levels, and abilities throughout the state of Washington. We teach the joys of bicycling, advocate for safe places to ride, and produce world-class rides and events. Our signature programs include the Seattle to Portland, Free Group Rides, the Pedaling Relief Project, the Advocacy Leadership Institute, the Bike Walk Roll Summit, Let's Go, and the Major Taylor Project.</Text>
         <Text p>Cascade currently serves more than 8,900 members, has 26 professional staff, and more than 250 volunteers. </Text>
         <Text h4 style={Styles.aboutText}>Vision:</Text>
