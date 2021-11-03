@@ -18,6 +18,8 @@ const DailyRidesScreen = ({ navigation }) => {
         This section will display up to three daily rides feeding from rides API
         </Text>
       </View>
+
+      <View style={Styles.separator} />
       <View>
         <Text>
         View on a Map
@@ -28,7 +30,6 @@ const DailyRidesScreen = ({ navigation }) => {
         Register Now!
         </Text>
        </View>
-      <View style={Styles.separator} />
     </View>
   );
 };
