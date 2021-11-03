@@ -1,4 +1,4 @@
-package com.cascadebikeclub;
+package org.cascade;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
