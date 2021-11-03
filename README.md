@@ -99,4 +99,4 @@ Any contributions are **greatly appreciated**. Please feel free to add any featu
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-This app's creation started during the 2021 Fall quarter of  the Application Development Program at North Seattle College. It was created by [Alex Bondar](https://github.com/zmagar), [Dagmawi Demissie](https://github.com/dagmawidemissie17), [Natalia Gourva](https://github.com/nataliagourova), and [Caleb McOlin](https://github.com/CalebMcOlin).
+This app's creation started during the 2021 Fall quarter of  the Application Development Program at North Seattle College. It was created by [Alex Bondar](https://github.com/zmagar), [Dagmawi Demissie](https://github.com/dagmawidemissie17), [Natalia Gourova](https://github.com/nataliagourova), and [Caleb McOlin](https://github.com/CalebMcOlin).
