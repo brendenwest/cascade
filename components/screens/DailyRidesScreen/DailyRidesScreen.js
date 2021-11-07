@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Styles } from './DailyRidesStyleSheet';
-import { SafeAreaView, View, Text, FlatList, StatusBar, TouchableOpacity } from 'react-native';
-import Card from  '../../shared/card';
+import { Styles } from './DailyRidesScreenStyles.js'; 
+import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
 
 const DATA = [
   {
