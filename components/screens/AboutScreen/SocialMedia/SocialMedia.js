@@ -1,9 +1,18 @@
 import React from 'react';
 import { Styles } from './SocialMediaStyles';
-import { View, Text, Alert, Pressable } from 'react-native';
+import { View, Text, Alert, Pressable, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
 const StayConnected = () => {
+
+  const openURL = async (url) => {
+    const isSupported = await Linking.canOpenURL(url);
+    if (isSupported) {
+      await Linking.openURL(url);
+    } else {
+      Alert.alert(`Sorry, there is an Error with this link.`);
+    }
+  };
 
   return (
     <View>
@@ -11,30 +20,37 @@ const StayConnected = () => {
         <Text style={Styles.stayConnectedTxt}>STAY CONNECTED</Text>
       </View>
       <View style={Styles.stayConnectedBtn}>
-        <Pressable onPress={() => Alert.alert('Redirecting to Facebook')}>
+        <Pressable onPress={() => openURL('https://facebook.com/CascadeBicycleClub')}>
           <Icon
             name='facebook-with-circle'
             size={40}
             color='white'
           />
         </Pressable>
-        <Pressable onPress={() => Alert.alert('Redirecting to Twitter')}>
+        <Pressable onPress={() => openURL('https://twitter.com/cascadebicycle')}>
           <Icon
             name='twitter-with-circle'
             size={40}
             color='white'
           />
         </Pressable>
-        <Pressable onPress={() => Alert.alert('Redirecting to Instagram')}>
+        <Pressable onPress={() => openURL('https://www.flickr.com/photos/cascadebicycleclub')}>
           <Icon
-            name='instagram-with-circle'
+            name='flickr-with-circle'
             size={40}
             color='white'
           />
         </Pressable>
-        <Pressable onPress={() => Alert.alert('Redirecting to YouTube')}>
+        <Pressable onPress={() => openURL('https://www.youtube.com/user/cascadebicyclevideo')}>
           <Icon
             name='youtube-with-circle'
+            size={40}
+            color='white'
+          />
+        </Pressable>
+        <Pressable onPress={() => openURL('https://www.instagram.com/cascadebicycle/')}>
+          <Icon
+            name='instagram-with-circle'
             size={40}
             color='white'
           />
