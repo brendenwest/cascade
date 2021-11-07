@@ -2,58 +2,6 @@ import React, { useState } from 'react';
 import { Styles } from './DailyRidesScreenStyles.js'; 
 import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: "**CANCELLED** Saturday Snohomish Co. Moderate ride (Willis Tucker Park/Snohomish)",
-    url: "/node/74367",
-    date: "Sat. Nov 6, 2021 8:55am",
-    pace: "Moderate: [14-16mph]",
-    distance: "39.50 miles",
-    leader: "Ride Leader(s): Michael J Upsall",
-    location: {
-      "street": "Kirkland Transit Center, 308 Kirkland Ave",
-      "city": "Kirkland",
-      "state": "WA",
-      "postal-code": "98033",
-      "google-map-link": "http://maps.google.com/?q=47.676026500000,-122.202897600000"
-    }
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: "Eastside Hills #18",
-    url: "/node/74365",
-    date: "Sat. Nov 6, 2021 9:00am",
-    pace: "Vigorous: [18-20mph]",
-    distance: "50.00 miles",
-    leader: "Ride Leader(s): Radu BanJoe L Sullivan",
-    location: {
-      "street": "Kirkland Transit Center, 308 Kirkland Ave",
-      "city": "Kirkland",
-      "state": "WA",
-      "postal-code": "98033",
-      "google-map-link": "http://maps.google.com/?q=47.676026500000,-122.202897600000"
-    }
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: "Ride Around Redmond",
-    url: "/node/74276",
-    date: "Sat. Nov 6, 2021 9:30am",
-    pace: "Steady: [12-14mph]",
-    distance: "28.30 miles",
-    leader: "Ride Leader(s): Mahesh Gopalan",
-    location: {
-      "street": "Lake Sammamish Trail Parking, 17600 NE 70th ST",
-      "city": "Redmond",
-      "state": "WA",
-      "postal-code": "98052",
-      "google-map-link": "http://maps.google.com/?q=47.666692672943,-122.103360799200"
-    }
-  },
-
-];
-
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
     <Text style={[Styles.title, textColor]}>{item.title}</Text>
@@ -64,33 +12,83 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
   </TouchableOpacity>
 );
 
-const DailyRidesScreen = ({ navigation }) => {
-    const [selectedId, setSelectedId] = useState(null);
+export default class App extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          selectedId: 0,
+          data: [],
+          refreshing: true,
+      }
+  }
 
-    const renderItem = ({ item }) => {
-      const backgroundColor = item.id === selectedId ? '#787a7d' : '#e1e3e6';
-      const color = item.id === selectedId ? 'white' : 'black';
-  
+  componentDidMount() {
+      this.fetchRides();
+  }
+
+  fetchRides() {
+      this.setState({ refreshing: true });
+
+      fetch('https://cascade-api.herokuapp.com/calendar')
+            .then((response) => response.json())
+            .then((data) => {
+              const dailyRides = data.map((element, index) => {
+                if (index === 0) {
+                    console.log(Object.keys(element));
+                  }
+                return {
+                    id: index,
+                    title: element.title,
+                    url: element.url,
+                    date: element.date,
+                    pace: element.pace,
+                    distance: element.distance,
+                    leader: element.leader,
+                    location: element.location,
+                };
+              });
+              this.setState({ data: dailyRides });
+              this.setState({ refreshing: false });
+            }).catch(e => {
+              this.setState({ data: [
+                  {
+                      id: 0,
+                      title: e.toString()
+                  }
+              ]});
+              this.setState({ refreshing: false });
+              console.log(e);
+            });
+      }
+      renderItemComponent = ({ item }) => {
+        const backgroundColor = item.id === this.state.data.selectedId ? '#787a7d' : '#e1e3e6';
+        const color = item.id === this.state.data.selectedId ? 'white' : 'black';
+        return (
+          <Item
+            item={item}
+            onPress={() => this.state.data.selectedId(item.id)}
+            backgroundColor={{ backgroundColor }}
+            textColor={{ color }}
+          />
+        );
+      };
+
+    handleRefresh = () => {
+      this.setState({ refreshing: false }, () => { this.fetchRides() }); // call fetchRides after setting the state
+    }
+
+    render() {
       return (
-        <Item
-          item={item}
-          onPress={() => setSelectedId(item.id)}
-          backgroundColor={{ backgroundColor }}
-          textColor={{ color }}
-        />
-      );
-    };
-
-    return (
       <SafeAreaView style={Styles.container}>
         <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          extraData={selectedId}
+          data={this.state.data}
+          renderItem={item => this.renderItemComponent(item)}
+          keyExtractor={item => item.id.toString()}
+          ItemSeparatorComponent={this.ItemSeparator}
+          refreshing={this.state.refreshing}
+          onRefresh={this.handleRefresh}
         />
-      </SafeAreaView>
-    );
+      </SafeAreaView>          
+      )
+    }
 };
-
-export default DailyRidesScreen;
