@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Styles } from './DailyRidesScreenStyles.js'; 
+import { Styles } from './DailyRidesStyles.js'; 
 import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
 
 const DATA = [
