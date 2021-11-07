@@ -15,10 +15,11 @@ const StayConnected = () => {
   };
 
   return (
-    <View>
+    <View style={Styles.element}>
       <View>
         <Text style={Styles.stayConnectedTxt}>STAY CONNECTED</Text>
       </View>
+      <View style={Styles.separator} />
       <View style={Styles.stayConnectedBtn}>
         <Pressable onPress={() => openURL('https://facebook.com/CascadeBicycleClub')}>
           <Icon
@@ -54,6 +55,18 @@ const StayConnected = () => {
             size={40}
             color='white'
           />
+        </Pressable>
+      </View>
+      <View style={Styles.separator} />
+      <View style={Styles.stayConnectedBtn}>
+        <Pressable onPress={() => openURL('https://cascade.org/membership')}>
+          <Text style={Styles.joinDonateShoptxt}>JOIN</Text>
+        </Pressable>
+        <Pressable onPress={() => openURL('https://cascade.org/donate')}>
+          <Text style={Styles.joinDonateShoptxt}>DONATE</Text>
+        </Pressable>
+        <Pressable onPress={() => openURL('https://cbcmerchandise.com/cbc')}>
+          <Text style={Styles.joinDonateShoptxt}>SHOP</Text>
         </Pressable>
       </View>
     </View>
