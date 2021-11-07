@@ -13,6 +13,7 @@ export const Styles = StyleSheet.create({
         paddingBottom: 5
     },
     stayConnectedTxt: {
+        letterSpacing: 1,
         textAlign: 'center',
         color: 'white',
         fontWeight: 'bold',
