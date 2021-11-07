@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Styles } from './DailyRidesStyleSheet';
-import { SafeAreaView, View, Text, FlatList } from 'react-native';
+import { SafeAreaView, View, Text, FlatList, StatusBar, TouchableOpacity } from 'react-native';
 import Card from  '../../shared/card';
 
 const DATA = [
@@ -18,67 +18,39 @@ const DATA = [
   },
 ];
 
-const Item = ({ title }) => (
-  <View style={Styles.item}>
-    <Text style={Styles.title}>{title}</Text>
-  </View>
+const Item = ({ item, onPress, backgroundColor, textColor }) => (
+  <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
+    <Text style={[Styles.title, textColor]}>{item.title}</Text>
+  </TouchableOpacity>
 );
 
 const DailyRidesScreen = ({ navigation }) => {
-    const renderItem = ({ item }) => (
-      <Item title={item.title} />
-    );  
+    const [selectedId, setSelectedId] = useState(null);
+
+    const renderItem = ({ item }) => {
+      const backgroundColor = item.id === selectedId ? '#787a7d' : '#e1e3e6';
+      const color = item.id === selectedId ? 'white' : 'black';
+  
+      return (
+        <Item
+          item={item}
+          onPress={() => setSelectedId(item.id)}
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+        />
+      );
+    };
+
     return (
       <SafeAreaView style={Styles.container}>
         <FlatList
           data={DATA}
           renderItem={renderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
+          extraData={selectedId}
         />
       </SafeAreaView>
     );
-
-    // <View style={Styles.container}>
-    //   <View>
-    //     <Text style={Styles.title}>
-    //       Featured Daily Rides
-    //     </Text>
-    //   </View>
-
-      /* <View style={Styles.separator} />
-
-      <View>
-        <Text style={Styles.title}>
-        This section will display up to three daily rides feeding from rides API
-        </Text>
-      </View>
-
-      <View style={Styles.separator} />
-
-      <FlatList
-        style={{
-          flex: 1,
-          // alignSelf: 'flex-start'
-        }}
-        keyExtractor={(item) => item.id}  
-        data={rides}
-        renderItem={({ item }) => (
-          <Text style={Styles.text}>{item.name}</Text>
-        )}
-      />
-        <Card>
-          <Text>View on a Map</Text>
-          <Text>Free Group Rides Map </Text>
-          <Text>Renton to the Alki Lighthouse</Text>  
-          <Text>Wed, 11/03/2021 - 10:00am | Renton</Text>  
-          <Text>Pace: Steady: [12-14mph] | Distance: 37 miles</Text> 
-          <Text>Register Now!</Text>  
-        </Card>
-
-
-    </View>
-  );
-}; */
 };
 
 export default DailyRidesScreen;
