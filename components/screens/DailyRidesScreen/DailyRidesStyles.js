@@ -13,7 +13,11 @@ export const Styles = StyleSheet.create({
         marginHorizontal: 16,
       },
       title: {
+<<<<<<< HEAD
         fontSize: 23,
+=======
+        fontSize: 24,
+>>>>>>> main
         color: '#20232a',
         marginVertical: 8,
       },
@@ -29,4 +33,8 @@ export const Styles = StyleSheet.create({
         borderBottomColor: '#737373',
         borderBottomWidth: StyleSheet.hairlineWidth,
     },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> main
