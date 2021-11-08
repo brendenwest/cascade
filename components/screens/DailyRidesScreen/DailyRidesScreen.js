@@ -61,12 +61,12 @@ export default class App extends React.Component {
             });
       }
       renderItemComponent = ({ item }) => {
-        const backgroundColor = item.id === this.state.data.selectedId ? '#787a7d' : '#e1e3e6';
-        const color = item.id === this.state.data.selectedId ? 'white' : 'black';
+        const backgroundColor = item.id === this.state.selectedId ? '#787a7d' : '#e1e3e6';
+        const color = item.id === this.state.selectedId ? 'white' : 'black';
         return (
           <Item
             item={item}
-            onPress={() => this.state.data.selectedId(item.id)}
+            onPress={() => this.setState({ selectedId : item.id })}
             backgroundColor={{ backgroundColor }}
             textColor={{ color }}
           />
