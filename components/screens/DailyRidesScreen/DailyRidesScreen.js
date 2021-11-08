@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Styles } from './DailyRidesScreenStyles.js'; 
+import { Styles } from './DailyRidesStyles'
 import { SafeAreaView, Text, FlatList, TouchableOpacity, Linking } from 'react-native';
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
