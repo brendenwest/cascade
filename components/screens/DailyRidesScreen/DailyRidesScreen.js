@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Styles } from './DailyRidesScreenStyles.js'; 
-import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, FlatList, TouchableOpacity, Linking } from 'react-native';
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
@@ -63,10 +63,13 @@ export default class App extends React.Component {
       renderItemComponent = ({ item }) => {
         const backgroundColor = item.id === this.state.selectedId ? '#787a7d' : '#e1e3e6';
         const color = item.id === this.state.selectedId ? 'white' : 'black';
+        
         return (
           <Item
             item={item}
-            onPress={() => this.setState({ selectedId : item.id })}
+            onPress={() => {this.setState({ selectedId : item.id });
+              Linking.openURL('https://cascade.org'+ item.url);}
+            }
             backgroundColor={{ backgroundColor }}
             textColor={{ color }}
           />
