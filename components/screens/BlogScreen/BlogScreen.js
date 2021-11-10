@@ -1,4 +1,4 @@
-import { useIsFocused } from '@react-navigation/core';
+import { useIsFocused } from '@react-navigation/native';
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {View, Text, ScrollView, Linking, Button} from 'react-native';
@@ -31,13 +31,13 @@ const BlogScreen = () => {
       console.log(data);
     };
     useEffect(() => {
-      console.log('Called');
+      console.log('useEffect called');
       if(isFocused) {
       getData();
      
       }
 
-    }, []);
+    }, [isFocused]);
  
   return (
     <SafeAreaView>
