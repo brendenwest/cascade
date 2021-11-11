@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const Styles = StyleSheet.create({
     element: {
-        backgroundColor: '#0D8FCB',
+        backgroundColor: '#0176ae',
     },
     stayConnectedBtn: {
         flexDirection: 'row',
@@ -24,10 +24,5 @@ export const Styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 20,
-    },
-    separator: {
-        // marginVertical: 8,
-        borderBottomColor: '#737373',
-        borderBottomWidth: StyleSheet.hairlineWidth,
-    },
+    }
 });
