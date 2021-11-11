@@ -2,6 +2,7 @@ import React from 'react';
 import { Styles } from './SocialMediaStyles';
 import { View, Text, Alert, Pressable, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
+import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 const StayConnected = () => {
 
@@ -57,13 +58,13 @@ const StayConnected = () => {
         </Pressable>
       </View>
       <View style={Styles.stayConnectedBtn}>
-        <Pressable onPress={() => openURL('https://cascade.org/membership')}>
+        <Pressable onPress={(e) => { e.preventDefault(); InAppBrowser.open('https://cascade.org/membership') }}>
           <Text style={Styles.joinDonateShoptxt}>JOIN</Text>
         </Pressable>
-        <Pressable onPress={() => openURL('https://cascade.org/donate')}>
+        <Pressable onPress={(e) => { e.preventDefault(); InAppBrowser.open('https://cascade.org/donate') }}>
           <Text style={Styles.joinDonateShoptxt}>DONATE</Text>
         </Pressable>
-        <Pressable onPress={() => openURL('https://cbcmerchandise.com/cbc')}>
+        <Pressable onPress={(e) => { e.preventDefault(); InAppBrowser.open('https://cbcmerchandise.com/cbc') }}>
           <Text style={Styles.joinDonateShoptxt}>SHOP</Text>
         </Pressable>
       </View>
