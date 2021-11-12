@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const Styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ export const Styles = StyleSheet.create({
     marginVertical: 8,
     fontSize: 22,
     // backgroundColor: '#434345',
-    
+
   },
   fixToText: {
     flexDirection: 'row',
@@ -23,17 +23,13 @@ export const Styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   blogItem: {
-    // backgroundColor: '#64c5e8',
-    // padding: 20,
-    // marginVertical: 8,
-    // marginHorizontal: 16,
     fontSize: 14
   },
   date: {
-      fontSize: 10,
+    fontSize: 10,
   },
   button: {
-      widhth: 8,
+    widhth: 8,
     height: 4,
   },
   image: {
