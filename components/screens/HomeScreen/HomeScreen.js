@@ -1,5 +1,5 @@
 import React from 'react';
-import { Styles } from './HomeStyleSheet';
+import { Styles } from './HomeStyles';
 import { View, Text } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
