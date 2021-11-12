@@ -15,7 +15,6 @@ const currentDate=new Date(Date.now()); // get current date
 const today=currentDate.toDateString(); //date into readable string format
 if (today.substring(8,9)=="0"){
   today=today.slice(0,8)+readableDate.slice(9)}; //remove 0 if one digit date
-console.log('todays date: ', today);
 
 export default class App extends React.Component {
   constructor(props) {
@@ -95,8 +94,6 @@ export default class App extends React.Component {
             let rideDate=''; 
             d[10]===',' ? rideDate=d.slice(0,3)+d.slice(4,10)+d.slice(11,16) : 
               rideDate=d.slice(0,3)+d.slice(4,11)+d.slice(12,17);
-            console.log(d)
-            console.log(rideDate);
             if (rideDate===today){
               return this.renderItemComponent(item)};
             }
