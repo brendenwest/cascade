@@ -13,6 +13,7 @@ export default function HomeStack() {
         headerMode: 'screen',
         headerTintColor: 'white',
         headerStyle: { backgroundColor: 'tomato' },
+        headerShown: true
       }}
     >
       <Stack.Screen
@@ -20,6 +21,7 @@ export default function HomeStack() {
         component={HomeScreen}
         options={{
           title: 'JOIN',
+          headerShown: false,
           gestureEnabled: 'true',
         }}
       />
