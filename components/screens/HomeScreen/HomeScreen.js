@@ -1,6 +1,8 @@
 import React from 'react';
 import { Styles } from './HomeStyles';
-import { View, Text } from 'react-native';
+import { View, Text} from 'react-native';
+import {Button} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -20,7 +22,24 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       <View style={Styles.separator} />
+    
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title=' Daily Featured Rides'
+          type='clear'
+          backgroundColor="#0176ae"
+          icon={
+            <Icon
+              name="bicycle"
+              size={25}
+              color="#0176ae"
+            />
+          }
+          onPress={() => navigation.navigate('Daily Rides')}
+        />
+      </View>
     </View>
+    
   );
 };
 
