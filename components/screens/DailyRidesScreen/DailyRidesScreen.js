@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Styles } from './DailyRidesStyles'
-import { SafeAreaView, Text, FlatList, TouchableOpacity, Linking } from 'react-native';
+import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
+import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
@@ -70,13 +71,15 @@ export default class App extends React.Component {
         
         return (
           <Item
-            item={item}
-            onPress={() => {this.setState({ selectedId : item.id });
-              Linking.openURL('https://cascade.org'+ item.url);}
-            }
-            backgroundColor={{ backgroundColor }}
-            textColor={{ color }}
-          />
+          item={item}
+          onPress={(e) => {
+            e.preventDefault();
+            this.setState({ selectedId : item.id }); 
+            InAppBrowser.open('https://cascade.org'+ item.url);}
+          }
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+        />
         );
       };
 
