@@ -20,7 +20,7 @@ export default class App extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          selectedId: 0,
+          selectedId: null,
           data: [],
           refreshing: true,
       }
