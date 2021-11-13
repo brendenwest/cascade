@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 export default function HomeStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomePage"
       screenOptions={{
         headerMode: 'screen',
         headerTintColor: 'white',
@@ -17,12 +17,10 @@ export default function HomeStack() {
       }}
     >
       <Stack.Screen
-        name="Home"
+        name="HomePage"
         component={HomeScreen}
         options={{
-          title: 'JOIN',
-          headerShown: false,
-          gestureEnabled: 'true',
+          headerShown: false
         }}
       />
       <Stack.Screen
