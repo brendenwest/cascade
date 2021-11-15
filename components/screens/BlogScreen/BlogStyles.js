@@ -9,21 +9,18 @@ export const Styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     marginVertical: 8,
-    fontSize: 22,
-    // backgroundColor: '#434345',
+    fontSize: 18,
+    color: 'gray',
 
   },
   fixToText: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
+
   blogItem: {
-    fontSize: 14
+    fontSize: 14,
+    color: 'gray',
   },
   date: {
     fontSize: 10,

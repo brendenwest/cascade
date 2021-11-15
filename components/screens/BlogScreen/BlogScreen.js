@@ -1,13 +1,11 @@
 import { useIsFocused } from '@react-navigation/native';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Linking, Button } from 'react-native';
+import { View, Text, ScrollView, Button } from 'react-native';
 import { Image } from 'react-native-elements';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Styles } from './BlogStyles';
-
-var blogData = [];
 
 const BlogScreen = () => {
 
