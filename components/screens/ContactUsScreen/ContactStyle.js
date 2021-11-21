@@ -6,20 +6,24 @@ export const Styles = StyleSheet.create({
         marginHorizontal: 10
     },
     contactText: {
-        textAlign: 'center'
+        textAlign: 'left'
     },
     mapStyle: {  
         //position: 'absolute',  
-        height: 200,
-        width: 150,
-        justifyContent: 'flex-end',
-        alignItems: 'center',  
-        }, 
-    image: {
-     flexDirection: 'row',
-        justifyContent: 'flex-end',
-        width: 200,
         height: 100,
+        width: 200,
+        justifyContent: 'flex-end',
+        alignItems: 'center'  
+        }, 
+     button: {
+        widhth: 8,
+        height: 4,
+        },
+    image: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: 400,
+        height: 150,
         }
     
 });
