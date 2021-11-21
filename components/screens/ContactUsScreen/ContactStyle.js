@@ -10,7 +10,7 @@ export const Styles = StyleSheet.create({
     },
     mapStyle: {  
         //position: 'absolute',  
-        height: 100,
+        height: 150,
         width: 200,
         justifyContent: 'flex-end',
         alignItems: 'center'  
