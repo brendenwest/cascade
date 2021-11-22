@@ -35,7 +35,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A mobile app that allows users to interact with the Cascade bicycle club in an easy and intuitive way. The app includes features such as an Events Calendar, Classes, Blogs, Club Programs, Street views, and much more
+A mobile app that allows users to interact with the Cascade bicycle club in an easy and intuitive way. The app includes features such as an Events Calendar, Classes, Blogs, Club Programs, Street views, and much more.
+APIs used for our development are scrapped and stored in this<a href="https://github.com/brendenwest/cascade-api" target="_blank"> repo</a>. They are provided to us by [Brenden West](https://github.com/brendenwest).
 
 ### Motivation
 
