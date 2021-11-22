@@ -13,7 +13,7 @@ export const Styles = StyleSheet.create({
         marginHorizontal: 16,
       },
       title: {
-        fontSize: 24,
+        fontSize: 23,
         color: '#20232a',
         marginVertical: 8,
       },
