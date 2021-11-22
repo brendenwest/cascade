@@ -22,7 +22,6 @@ async function openLink(urlToOpen) {
         forceCloseOnRedirection: false,
         hasBackButton: true,
       })
-      console.log(JSON.stringify(result));
     }
     else Linking.openURL(urlToOpen)
   } catch (error) {
@@ -42,10 +41,8 @@ const BlogScreen = () => {
     const data = await resp.json();
     setData(data);
     setLoading(false);
-    console.log(data);
   };
   useEffect(() => {
-    console.log('useEffect called');
     getData();
 
   }, []);
