@@ -20,8 +20,6 @@ async function openLink(urlToOpen) {
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,
-        // Specify full animation resource identifier(package:anim/name)
-        // or only resource name(in case of animation bundled with app).
         hasBackButton: true,
       })
       console.log(JSON.stringify(result));
@@ -58,18 +56,15 @@ const BlogScreen = () => {
         {
           loading ?
             (
-              
-              <View>
-              <ActivityIndicator
-                animating={true}
-                visible={loading}
-                size="large"
-                color="#0176ae"
-                textContent={'Loading...'} />
-                </View>
-              //   <View>
-              //   <Text>...Loading</Text>
-              // </View>
+              <View style={Styles.container}>
+                <ActivityIndicator
+                  animating={true}
+                  visible={loading}
+                  size="large"
+                  color="#0176ae"
+                  textContent={'Loading...'} />
+              </View>
+
             )
 
             :

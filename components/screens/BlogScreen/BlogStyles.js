@@ -19,20 +19,23 @@ export const Styles = StyleSheet.create({
   },
 
   blogItem: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'gray',
+    margin: 10,
   },
   date: {
     fontSize: 10,
   },
   button: {
-    widhth: 8,
-    height: 4,
+    marginHorizontal:200,
+    alignSelf: 'center',
+
   },
   image: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    width: 200,
-    height: 100,
+    width: 400,
+    height: 200,
+    resizeMode: 'stretch',
   }
 });
