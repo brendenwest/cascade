@@ -4,14 +4,11 @@ export const Styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
+        alignItems: 'center'
     },
     title: {
         textAlign: 'center',
         marginVertical: 8,
-    },
-    separator: {
-        marginVertical: 8,
-        borderBottomColor: '#737373',
-        borderBottomWidth: StyleSheet.hairlineWidth,
+        color: 'gray'
     },
 });
