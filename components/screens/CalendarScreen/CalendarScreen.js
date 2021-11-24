@@ -6,50 +6,53 @@ import { Styles } from './CalendarStyle';
 //fetch data from the server
 const calendarURL = 'https://cascade-api.herokuapp.com/calendar';
 
+
+//create a calendar screen
 const CalendarScreen = () => {
+    const [calendar, setCalendar] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const location = ["street", "city", "state", "postal-code", "google-maplink"];
+    //fetch data from the server
+    useEffect(() => {
+        fetch(calendarURL)
+        .then(res => res.json())
+        .then(res => {
+            setCalendar(res);
+            setIsLoading(false);
+        })  //end of then
+        .catch(err => console.log(err));
+    }, []); //end of useEffect
 
-   const [isLoading, setLoading] = useState(true);
-   const [calendarData, setCalendarData] = useState([]);
+    //render the calendar screen
+    return (
 
+        <SafeAreaView style={Styles.container}>
+            <ScrollView>
+                {isLoading ? (
+                    <Text>Loading...</Text>
+                ) : ( 
+                    <View>
+                        {calendar.map((item, index) => (
+                            <View key={index} style={Styles.calendarItem}>
+                                <Text style={Styles.date}>{item.date}</Text>
+                                <Text style={Styles.title}>{item.title}</Text>
+                                <Text style={Styles.calendarItem}>{item.description}</Text>
+                                <Text style={Styles.calendarItem}>{item.location}</Text>
+                                <Text style={Styles.calendarItem}>{item.time}</Text>
+                            </View>
+                        ))}
+                       //render location array
+                       <ol>
+                        {location.map((address) => (
+                          <li>{address}</li>
+                        ))}
+                      </ol>
 
-
-  useEffect(() => {
-    fetch(calendarURL)
-      .then(response => response.json())
-      .then(json =>
-         setCalendarData(json))
-      .catch(error => alert(error))
-      .finally(setLoading(false));
-  }, []);
-
-  //console.log(calendarData);
-
-  //rendering
-  return (
-    <SafeAreaView>
-    <ScrollView>
-     
-      {calendarData.map(({title, url, date, pace, distance, leader }) => (
-        <>
-          <Text key={title} style={Styles.title}>
-            {title}
-          </Text>
-          <Text style={Styles.date} key={date}>{date}</Text>
-          
-          <Text key={date} style={Styles.calendarItem} >{date}</Text>
-          <Text key={pace} style={Styles.calendarItem} >{pace}</Text>
-          <Text key={distance} style={Styles.calendarItem} >{distance}</Text>
-          <Text key={leader} style={Styles.calendarItem} >{leader}</Text>
-
-          <View key={url} style = {{ width: 200, height: 50 }}>
-    
-          </View>
-        </>
-      ))
-    }
-    </ScrollView>
-    </SafeAreaView>
-  );
-};
+                    </View>
+                )}
+            </ScrollView>
+        </SafeAreaView>
+    );
+}
 
 export default CalendarScreen;

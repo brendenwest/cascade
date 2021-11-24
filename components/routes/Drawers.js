@@ -34,16 +34,7 @@ export const DefaultDrawer = () => {
                 onPress={() => navigation.goBack()}
               />
             )
-          })} />
-          <Drawer.Screen name="Events Calendar" component={CalendarScreen}
-          options={({ navigation }) => ({
-            headerLeft: () => (
-              <HeaderBackButton
-                tintColor={'white'}
-                onPress={() => navigation.goBack()}
-              />
-            )
-          })} />
+          })} />     
       </Drawer.Group>
     </Drawer.Navigator>
   );
