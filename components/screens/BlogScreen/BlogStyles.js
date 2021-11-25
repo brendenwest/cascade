@@ -8,16 +8,14 @@ export const Styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    marginVertical: 8,
     fontSize: 18,
     color: 'gray',
-
+    fontWeight: 'bold',
   },
   fixToText: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-
   blogItem: {
     fontSize: 16,
     color: 'gray',
@@ -27,9 +25,9 @@ export const Styles = StyleSheet.create({
     fontSize: 10,
   },
   button: {
-    marginHorizontal:200,
-    alignSelf: 'center',
-
+    width: 200,
+    height: 50,
+    marginBottom: 20,
   },
   image: {
     flexDirection: 'row',

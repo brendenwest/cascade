@@ -61,9 +61,7 @@ const BlogScreen = () => {
                   color="#0176ae"
                   textContent={'Loading...'} />
               </View>
-
             )
-
             :
             data.map(({ title, postDate, body, url, image }) => (
               <View key={url}>
@@ -78,9 +76,8 @@ const BlogScreen = () => {
 
                 />
                 <Text key={body} style={Styles.blogItem} >{body}</Text>
-                <View key={url} style={{ width: 200, height: 50 }}>
+                <View key={url} style={Styles.button}>
                   <Button
-                    style={Styles.button}
                     type="solid"
                     title="Read more"
                     color="#F55243"
