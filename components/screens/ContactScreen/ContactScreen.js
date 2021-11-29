@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, Button } from 'react-native';
-import { Styles } from './ContactStyle'
+import { Styles } from './ContactStyles'
 import MapView from 'react-native-maps';  
 import { Marker } from 'react-native-maps';  
 import { Image } from 'react-native-elements';
