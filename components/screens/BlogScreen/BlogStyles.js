@@ -8,31 +8,32 @@ export const Styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    marginVertical: 8,
     fontSize: 18,
     color: 'gray',
-
+    fontWeight: 'bold',
   },
   fixToText: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-
   blogItem: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'gray',
+    margin: 10,
   },
   date: {
     fontSize: 10,
   },
   button: {
-    widhth: 8,
-    height: 4,
+    width: 200,
+    height: 50,
+    marginBottom: 20,
   },
   image: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    width: 200,
-    height: 100,
+    width: 400,
+    height: 200,
+    resizeMode: 'stretch',
   }
 });
