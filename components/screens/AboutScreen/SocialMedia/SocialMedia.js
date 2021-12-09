@@ -58,13 +58,49 @@ const StayConnected = () => {
         </Pressable>
       </View>
       <View style={Styles.stayConnectedBtn}>
-        <Pressable onPress={(e) => { e.preventDefault(); InAppBrowser.open('https://cascade.org/membership') }}>
+        <Pressable onPress={(e) => {
+          e.preventDefault(); InAppBrowser.open('https://cascade.org/membership', {
+            showTitle: false,
+            toolbarColor: '#0176ae',
+            secondaryToolbarColor: 'black',
+            navigationBarColor: 'black',
+            navigationBarDividerColor: 'white',
+            enableUrlBarHiding: true,
+            enableDefaultShare: true,
+            forceCloseOnRedirection: false,
+            hasBackButton: true,
+          })
+        }}>
           <Text style={Styles.joinDonateShoptxt}>JOIN</Text>
         </Pressable>
-        <Pressable onPress={(e) => { e.preventDefault(); InAppBrowser.open('https://cascade.org/donate') }}>
+        <Pressable onPress={(e) => {
+          e.preventDefault(); InAppBrowser.open('https://cascade.org/donate', {
+            showTitle: false,
+            toolbarColor: '#0176ae',
+            secondaryToolbarColor: 'black',
+            navigationBarColor: 'black',
+            navigationBarDividerColor: 'white',
+            enableUrlBarHiding: true,
+            enableDefaultShare: true,
+            forceCloseOnRedirection: false,
+            hasBackButton: true,
+          })
+        }}>
           <Text style={Styles.joinDonateShoptxt}>DONATE</Text>
         </Pressable>
-        <Pressable onPress={(e) => { e.preventDefault(); InAppBrowser.open('https://cbcmerchandise.com/cbc') }}>
+        <Pressable onPress={(e) => {
+          e.preventDefault(); InAppBrowser.open('https://cbcmerchandise.com/cbc', {
+            showTitle: false,
+            toolbarColor: '#0176ae',
+            secondaryToolbarColor: 'black',
+            navigationBarColor: 'black',
+            navigationBarDividerColor: 'white',
+            enableUrlBarHiding: true,
+            enableDefaultShare: true,
+            forceCloseOnRedirection: false,
+            hasBackButton: true,
+          })
+        }}>
           <Text style={Styles.joinDonateShoptxt}>SHOP</Text>
         </Pressable>
       </View>

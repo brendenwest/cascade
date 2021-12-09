@@ -13,9 +13,9 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
   </TouchableOpacity>
 );
 const currentDate = new Date(Date.now()); // get current date
-const today = currentDate.toDateString(); //date into readable string format
+var today = currentDate.toDateString(); //date into readable string format
 if (today.substring(8, 9) == "0") {
-  today = today.slice(0, 8) + readableDate.slice(9)
+  today = today.slice(0, 8) + today.slice(9)
 }; //remove 0 if one digit date
 
 export default class App extends React.Component {
@@ -75,9 +75,18 @@ export default class App extends React.Component {
         onPress={(e) => {
           e.preventDefault();
           this.setState({ selectedId: item.id });
-          InAppBrowser.open('https://cascade.org' + item.url);
-        }
-        }
+          InAppBrowser.open('https://cascade.org' + item.url, {
+            showTitle: false,
+            toolbarColor: '#0176ae',
+            secondaryToolbarColor: 'black',
+            navigationBarColor: 'black',
+            navigationBarDividerColor: 'white',
+            enableUrlBarHiding: true,
+            enableDefaultShare: true,
+            forceCloseOnRedirection: false,
+            hasBackButton: true,
+          });
+        }}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
       />
