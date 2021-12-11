@@ -13,7 +13,7 @@ export const HomeTab = () => {
       <Tab.Group
         screenOptions={({ route }) => ({
           headerShown: false,
-          tabBarIcon: ({ focused, color, size }) => {
+          tabBarIcon: ({ color, size }) => {
             let iconName;
             if (route.name === 'Home') {
               iconName = 'home';
@@ -21,7 +21,7 @@ export const HomeTab = () => {
               iconName = 'calendar';
             } else if (route.name === 'Blog') {
               iconName = 'newspaper-o';
-            } 
+            }
             return <Icon name={iconName} size={size} color={color} />
           },
           tabBarActiveTintColor: '#43b02a',

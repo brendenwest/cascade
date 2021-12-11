@@ -33,7 +33,17 @@ const CalendarScreen = () => {
                   <Text
                     style={{ color: "blue" }}
                     onPress={() =>
-                      InAppBrowser.open("https://cascade.org" + url)
+                      InAppBrowser.open("https://cascade.org" + url, {
+                        showTitle: false,
+                        toolbarColor: '#0176ae',
+                        secondaryToolbarColor: 'black',
+                        navigationBarColor: 'black',
+                        navigationBarDividerColor: 'white',
+                        enableUrlBarHiding: true,
+                        enableDefaultShare: true,
+                        forceCloseOnRedirection: false,
+                        hasBackButton: true,
+                      })
                     }
                   >
                     <Text style={Styles.title}>{title}</Text>{" "}
