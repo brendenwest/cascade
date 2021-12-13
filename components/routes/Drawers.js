@@ -5,6 +5,8 @@ import { Image } from 'react-native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import AboutScreen from "../screens/AboutScreen/AboutScreen";
+import ContactScreen from "../screens/ContactScreen/ContactScreen";
+
 
 const Drawer = createDrawerNavigator();
 
@@ -47,7 +49,15 @@ export const DefaultDrawer = () => {
               />
             )
           })} />
-
+        <Drawer.Screen name="Contact Us" component={ContactScreen}
+          options={({ navigation }) => ({
+            headerLeft: () => (
+              <HeaderBackButton
+                tintColor={'white'}
+                onPress={() => navigation.goBack()}
+              />
+            )
+          })} />
       </Drawer.Group>
     </Drawer.Navigator>
   );
