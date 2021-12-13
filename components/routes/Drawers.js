@@ -6,6 +6,7 @@ import { HeaderBackButton } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import AboutScreen from "../screens/AboutScreen/AboutScreen";
 import ContactScreen from "../screens/ContactScreen/ContactScreen";
+import IndiRide from "../screens/IndiRideScreen/IndiRideScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -48,19 +49,9 @@ export const DefaultDrawer = () => {
               />
             )
           })} />
-<<<<<<< HEAD
-        <Drawer.Screen name="Contact Us" component={ContactScreen}
-          options={({ navigation }) => ({
-            headerLeft: () => (
-              <HeaderBackButton
-                tintColor={'white'}
-                onPress={() => navigation.goBack()}
-              />
-            )
-          })} />
-=======
+
         <Drawer.Screen name="IndiRideTest" component={IndiRide}  />
->>>>>>> 514e7d7b... individual ride screen
+
       </Drawer.Group>
     </Drawer.Navigator>
   );

@@ -1,11 +1,9 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
-import { View, ScrollView, Text, Button, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Text, Button, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { Icon } from 'react-native-elements'
-import { Image } from 'react-native-elements';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Styles } from './IndiRideStyles';
 
 export default App = () => {
@@ -22,7 +20,16 @@ export default App = () => {
             }, []));
     console.log('this is my data: ', data);
     if (loading) {
-        return <Text>Loading...</Text>
+        return(
+            <View style={Styles.container}>
+            <ActivityIndicator
+            animating={true}
+            visible={loading}
+            size="large"
+            color="#0176ae"
+            textContent={'Loading...'} />
+            </View> 
+        ) 
     }
         return (
             <View style={Styles.container}>
