@@ -6,13 +6,23 @@ export const Styles = StyleSheet.create({
         justifyContent: 'center',
         marginHorizontal: 16,
     },
-    title: {
-        textAlign: 'center',
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 20,
         marginVertical: 8,
-    },
+        marginHorizontal: 16,
+      },
+      title: {
+        fontSize: 32,
+        color: '#20232a',
+        marginVertical: 8,
+      },
     fixToText: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+    },
+    text: {
+        color: 'black',
     },
     separator: {
         marginVertical: 8,
