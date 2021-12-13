@@ -91,7 +91,18 @@ export default App = ({route, navigation}) => {
                     color='#f50'
                     onPress={(e) => {
                         e.preventDefault();
-                        InAppBrowser.open(data.links);}} />
+                        InAppBrowser.open(data.links, {
+                            showTitle: false,
+                            toolbarColor: '#0176ae',
+                            secondaryToolbarColor: 'black',
+                            navigationBarColor: 'black',
+                            navigationBarDividerColor: 'white',
+                            enableUrlBarHiding: true,
+                            enableDefaultShare: true,
+                            forceCloseOnRedirection: false,
+                            hasBackButton: true,
+                          }
+                        );}} />
                 </TouchableOpacity>   
             </ScrollView>   
         </View>
