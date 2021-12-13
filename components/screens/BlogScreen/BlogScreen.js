@@ -1,7 +1,7 @@
 import { useIsFocused } from '@react-navigation/native';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Button, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, Button, ActivityIndicator } from 'react-native';
 import { Image } from 'react-native-elements';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 import { SafeAreaView } from 'react-native-safe-area-context';

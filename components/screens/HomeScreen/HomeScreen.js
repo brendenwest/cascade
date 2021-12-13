@@ -13,19 +13,9 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title='Daily Featured Rides'
             type='clear'
-            buttonStyle={{
-              backgroundColor: 'rgba(127, 220, 103, 1)',
-              borderWidth: 2,
-              borderColor: 'black',
-              borderRadius: 50,
-            }}
-            containerStyle={{
-              width: 250,
-              height: 250,
-            }}
             titleStyle={{
               fontWeight: 'bold',
-              fontSize: 40
+              fontSize: 30
             }}
             icon={
               <Icon

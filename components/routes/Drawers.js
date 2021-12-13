@@ -17,6 +17,7 @@ export const DefaultDrawer = () => {
         headerShown: true,
         drawerIcon: ({ color, size }) => {
           let iconName;
+          size = 50;
           if (route.name === "Home ") {
             iconName = 'home';
           } else if (route.name === "About") {

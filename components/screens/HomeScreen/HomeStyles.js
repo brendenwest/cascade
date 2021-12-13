@@ -5,7 +5,7 @@ export const Styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: "space-evenly",
-        backgroundColor: 'lightGray'
+        backgroundColor: 'lightGray',
     },
     webBtnContainer: {
         padding: 10
@@ -35,8 +35,17 @@ export const Styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     ridesBtnContainer: {
-        alignItems: 'center',
-        marginTop: 30
+        alignSelf: "center",
+        alignItems: "center",
+        marginTop: 30,
+        backgroundColor: 'rgba(127, 220, 103, 1)',
+        borderWidth: 2,
+        borderColor: 'black',
+        borderRadius: 20,
+        width: 210,
+        height: 130,
+        marginBottom: 30,
+        opacity: 0.7
     },
     btnImage: {
         height: 100,
