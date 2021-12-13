@@ -6,19 +6,18 @@ import { Icon } from 'react-native-elements'
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 import { Styles } from './IndiRideStyles';
 
-export default App = () => {
+export default App = ({route, navigation}) => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-  
+    const { url } = route.params; //set the url node for corresponding api address
     useFocusEffect(
         React.useCallback(() => {
-            fetch('https://cascade-api.herokuapp.com/node/74247')           
+            fetch('https://cascade-api.herokuapp.com' + url)           
             .then((response) => response.json())
             .then((json) => setData(json))
             .catch((error) => console.error(error))
             .finally(() => setLoading(false));
             }, []));
-    console.log('this is my data: ', data);
     if (loading) {
         return(
             <View style={Styles.container}>
@@ -44,9 +43,7 @@ export default App = () => {
                     <Text style={Styles.date}> Regroup: {data.elevation}</Text>
                     <Text style={Styles.date}> Weather: {data.terrain}</Text>
                     <View style={Styles.separator} />
-                    <Text style={Styles.blogItem}>
-                    {console.log('this is my data: ', data.contact)}
-                    {console.log(typeof data.contact)}           
+                    <Text style={Styles.blogItem}>        
                     Leader Contact Information: {'\n'} 
                     {data.contact.name}{'\n'} 
                     {data.contact.email}{'\n'} 
@@ -61,7 +58,18 @@ export default App = () => {
                     size={6}
                     onPress={(e) => {
                         e.preventDefault();
-                        InAppBrowser.open('https://cascade.org/node/74247/register');
+                        InAppBrowser.open('https://cascade.org' + url + '/register', {
+                            showTitle: false,
+                            toolbarColor: '#0176ae',
+                            secondaryToolbarColor: 'black',
+                            navigationBarColor: 'black',
+                            navigationBarDividerColor: 'white',
+                            enableUrlBarHiding: true,
+                            enableDefaultShare: true,
+                            forceCloseOnRedirection: false,
+                            hasBackButton: true,
+                          }
+                        );
                     }}
                     />
                     <Text></Text>
