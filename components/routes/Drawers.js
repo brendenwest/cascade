@@ -48,6 +48,7 @@ export const DefaultDrawer = () => {
               />
             )
           })} />
+<<<<<<< HEAD
         <Drawer.Screen name="Contact Us" component={ContactScreen}
           options={({ navigation }) => ({
             headerLeft: () => (
@@ -57,6 +58,9 @@ export const DefaultDrawer = () => {
               />
             )
           })} />
+=======
+        <Drawer.Screen name="IndiRideTest" component={IndiRide}  />
+>>>>>>> 514e7d7b... individual ride screen
       </Drawer.Group>
     </Drawer.Navigator>
   );
