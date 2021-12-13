@@ -21,7 +21,7 @@ export const HomeTab = () => {
               iconName = 'calendar';
             } else if (route.name === 'Blog') {
               iconName = 'newspaper-o';
-            }
+            } 
             return <Icon name={iconName} size={size} color={color} />
           },
           tabBarActiveTintColor: '#43b02a',
