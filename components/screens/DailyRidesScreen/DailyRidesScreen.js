@@ -1,7 +1,6 @@
 import React from 'react';
 import { Styles } from './DailyRidesStyles'
 import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
-import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
@@ -19,8 +18,8 @@ if (today.substring(8, 9) == "0") {
 }; //remove 0 if one digit date
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, navigation) {
+    super(props, navigation);
     this.state = {
       selectedId: null,
       data: [],
@@ -74,18 +73,9 @@ export default class App extends React.Component {
         item={item}
         onPress={(e) => {
           e.preventDefault();
-          this.setState({ selectedId: item.id });
-          InAppBrowser.open('https://cascade.org' + item.url, {
-            showTitle: false,
-            toolbarColor: '#0176ae',
-            secondaryToolbarColor: 'black',
-            navigationBarColor: 'black',
-            navigationBarDividerColor: 'white',
-            enableUrlBarHiding: true,
-            enableDefaultShare: true,
-            forceCloseOnRedirection: false,
-            hasBackButton: true,
-          });
+          this.setState({ selectedId: item.id });        
+          this.props.navigation.navigate ('Individual Ride', {
+            url: item.url, }); //passing url props to the next screen 'Individual Ride'
         }}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
