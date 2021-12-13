@@ -7,7 +7,6 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import AboutScreen from "../screens/AboutScreen/AboutScreen";
 import ContactScreen from "../screens/ContactScreen/ContactScreen";
 
-
 const Drawer = createDrawerNavigator();
 
 export const DefaultDrawer = () => {
