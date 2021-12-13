@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import React from 'react';
 import { Styles } from './DailyRidesStyles'
 import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
-=======
-import React, { useState } from 'react';
-import { Styles } from './DailyRidesStyles'
-import { SafeAreaView, Text, FlatList, TouchableOpacity, Linking } from 'react-native';
->>>>>>> f113e38e... naming conflict resolve
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
