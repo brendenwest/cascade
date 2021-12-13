@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import { View, ScrollView, Text, Button, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements'
 import { Image } from 'react-native-elements';
@@ -8,19 +9,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Styles } from './IndiRideStyles';
 
 export default App = () => {
-    const [isLoading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
   
-    useEffect(() => {
-      fetch('https://cascade-api.herokuapp.com/node/74247')
-        .then((response) => response.json())
-        .then((json) => setData(json))
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            fetch('https://cascade-api.herokuapp.com/node/74247')           
+            .then((response) => response.json())
+            .then((json) => setData(json))
+            .catch((error) => console.error(error))
+            .finally(() => setLoading(false));
+            }, []));
     console.log('this is my data: ', data);
-    return (
-        <View style={Styles.container}>
+    if (loading) {
+        return <Text>Loading...</Text>
+    }
+        return (
+            <View style={Styles.container}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 } }>
                 <View >
                     <Text style={Styles.title}>{data.title}</Text>
@@ -33,11 +38,13 @@ export default App = () => {
                     <Text style={Styles.date}> Weather: {data.terrain}</Text>
                     <View style={Styles.separator} />
                     <Text style={Styles.blogItem}>
-                        Leader Contact Information: {'\n'} 
-                        {data.contact.name} {'\n'} 
-                        {data.contact.email} {'\n'} 
-                        {data.contact.phone} 
-                    </Text>
+                    {console.log('this is my data: ', data.contact)}
+                    {console.log(typeof data.contact)}           
+                    Leader Contact Information: {'\n'} 
+                    {data.contact.name}{'\n'} 
+                    {data.contact.email}{'\n'} 
+                    {data.contact.phone}
+                    </Text>                                   
                     <View style={Styles.separator} />
                     <Button
                     style={Styles.button}
@@ -53,29 +60,25 @@ export default App = () => {
                     <Text></Text>
                     <Text style={Styles.blogItem} >Ride Description: {data.description}</Text>
                 </View>  
-                       <TouchableOpacity style={Styles.navBarLeftButton}>
-            <Icon
-            name='info'
-            type='font-awesome'
-            color='#f50'
-            /> 
-            <Text>  </Text>
-            <Text style={Styles.blogItem}> {data.interests}</Text> 
-            <Text>                </Text>
-            <Icon
-            name='external-link-square'
-            type='font-awesome'
-            color='#f50'
-            onPress={(e) => {
-                e.preventDefault();
-                InAppBrowser.open(data.links);}} />
-        </TouchableOpacity>   
+                <TouchableOpacity style={Styles.navBarLeftButton}>
+                    <Icon
+                    name='info'
+                    type='font-awesome'
+                    color='#f50'
+                    /> 
+                    <Text>  </Text>
+                    <Text style={Styles.blogItem}> {data.interests}</Text> 
+                    <Text>  </Text>
+                    <Icon
+                    raised
+                    name='external-link-square'
+                    type='font-awesome'
+                    color='#f50'
+                    onPress={(e) => {
+                        e.preventDefault();
+                        InAppBrowser.open(data.links);}} />
+                </TouchableOpacity>   
             </ScrollView>   
         </View>
-
-
-
-
-   
-    )
-        };
+    ) 
+};
