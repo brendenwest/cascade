@@ -5,8 +5,6 @@ import { Image } from 'react-native';
 import { HeaderBackButton } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import AboutScreen from "../screens/AboutScreen/AboutScreen";
-import ContactScreen from "../screens/ContactScreen/ContactScreen";
-import IndiRide from "../screens/IndiRideScreen/IndiRideScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -49,8 +47,6 @@ export const DefaultDrawer = () => {
               />
             )
           })} />
-
-        <Drawer.Screen name="IndiRideTest" component={IndiRide}  />
 
       </Drawer.Group>
     </Drawer.Navigator>
