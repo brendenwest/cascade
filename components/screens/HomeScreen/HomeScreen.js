@@ -97,8 +97,7 @@ const HomeScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </ImageBackground>
-    </View>
-    
+    </View>   
   );
 };
 
