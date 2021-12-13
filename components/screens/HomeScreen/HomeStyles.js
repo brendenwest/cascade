@@ -44,8 +44,8 @@ export const Styles = StyleSheet.create({
         borderRadius: 20,
         width: 210,
         height: 130,
-        marginBottom: 30,
-        opacity: 0.7
+        marginBottom: 50,
+        // opacity: 0.8
     },
     btnImage: {
         height: 100,
