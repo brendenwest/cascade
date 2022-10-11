@@ -46,7 +46,7 @@ In 2015, UW students built a Group Ride Finder app (https://cascade.org/about-fr
 
 ### Built With
 
-- [React Vative CLI](https://reactnative.dev/)
+- [React Native CLI](https://reactnative.dev/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -56,7 +56,7 @@ In 2015, UW students built a Group Ride Finder app (https://cascade.org/about-fr
 ### Develop
 
 Prerequisites:
-- Make sure you have at least `npm: 7.#.#` and `node: 14.#.#`
+- Make sure you have at least `npm: 8.#.#` and `node: 16.#.#`
 - Have the latest Android Studio installed
 
 1. Clone the repo
@@ -77,14 +77,13 @@ Prerequisites:
    ```
    
 ### Use
-
-Download the App from the Google Play Store here: (_not currently on the store_)
+<!-- TODO -->
 
 <!-- ROADMAP -->
 ## Roadmap
 
 - See the [open issues](https://github.com/brendenwest/cascade/issues) for a list of proposed features (and known issues).
-- Visit the [Project Board](https://github.com/brendenwest/cascade/projects/3) to see current issue progress.
+- Visit the [Project Board](https://github.com/brendenwest/cascade/projects/1) to see current issue progress.
 
 <!-- CONTRIBUTING -->
 ## Contributing
