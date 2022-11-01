@@ -1,7 +1,6 @@
 import React from 'react';
 import { Styles } from './DailyRidesStyles'
 import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
-import { Alert } from 'react-native';
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
