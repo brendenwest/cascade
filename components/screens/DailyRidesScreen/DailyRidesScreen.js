@@ -1,6 +1,7 @@
 import React from 'react';
 import { Styles } from './DailyRidesStyles'
 import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
+import { Alert } from 'react-native';
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
@@ -66,7 +67,12 @@ export default class App extends React.Component {
   }
   renderItemComponent = ({ item }) => {
     const backgroundColor = item.id === this.state.selectedId ? '#787a7d' : '#e1e3e6';
-    const color = item.id === this.state.selectedId ? 'white' : 'black';
+    let color = item.id === this.state.selectedId ? 'white' : 'black';
+
+    // If ride is cancelled, change color to red
+    if (item.title.slice(0, 1) === "*") {
+      color = 'red';
+    }
 
     return (
       <Item
