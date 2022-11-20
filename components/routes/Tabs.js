@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeStack from './Stack';
 import CalendarScreen from '../screens/CalendarScreen/CalendarScreen';
 import BlogScreen from '../screens/BlogScreen/BlogScreen';
+import ResourcesScreen from '../screens/Resources/ResourcesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +22,9 @@ export const HomeTab = () => {
               iconName = 'calendar';
             } else if (route.name === 'Blog') {
               iconName = 'newspaper-o';
-            } 
+            } else if (route.name === 'Resources') {
+              iconName = 'folder-open';
+            }
             return <Icon name={iconName} size={size} color={color} />
           },
           tabBarActiveTintColor: '#43b02a',
@@ -30,6 +33,7 @@ export const HomeTab = () => {
         <Tab.Screen name="Home" component={HomeStack} />
         <Tab.Screen name="Calendar" component={CalendarScreen} />
         <Tab.Screen name="Blog" component={BlogScreen} />
+        <Tab.Screen name="Resources" component={ResourcesScreen} />
       </Tab.Group>
     </Tab.Navigator >
   );
