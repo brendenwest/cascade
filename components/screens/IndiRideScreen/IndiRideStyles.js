@@ -47,5 +47,8 @@ export const Styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start'
+  },
+  loadingIndicator: {
+    marginTop: 100
   }
 });

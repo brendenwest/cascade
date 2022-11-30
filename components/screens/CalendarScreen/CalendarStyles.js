@@ -3,35 +3,35 @@ import { StyleSheet } from "react-native";
 export const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    marginHorizontal: 16,
   },
   title: {
-    textAlign: "center",
-    fontSize: 22,
+    fontSize: 30,
     color: "#64c5e8",
-  },
-  fixToText: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: "#737373",
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    fontWeight: "bold",
   },
   calendarItem: {
     backgroundColor: "#eeeeee",
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
     fontSize: 14,
+    marginLeft: 30,
+    borderWidth: 1,
+    borderLeftWidth: 10,
+    borderColor: '#a0a1a3',
+    borderRadius: 10,
+    margin: 12,
+    padding: 15,
   },
   calendarText: {
-    fontSize: 14,
+    fontSize: 18,
+    color: '#464a54',
+    marginLeft: 30,
+    marginTop: 5,
   },
   date: {
-    fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 15,
+    color: '#464a54',
+    marginBottom: 5,
+  },
+  loadingIndicator: {
+    marginTop: 100
   }
 });

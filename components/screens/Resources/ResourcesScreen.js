@@ -1,6 +1,7 @@
 import React from 'react';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
-import { StyleSheet, SafeAreaView, StatusBar, Text, FlatList, TouchableOpacity, Image, View, TouchableHighlight } from 'react-native';
+import { SafeAreaView, Text, FlatList, TouchableOpacity, Image, View, TouchableHighlight, ActivityIndicator, Button } from 'react-native';
+import { Styles } from './ResourcesStyles';
 
 async function openLink(urlToOpen) {
   try {
@@ -23,9 +24,9 @@ async function openLink(urlToOpen) {
   }
 }
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+const Item = ({ item, onPress }) => (
+  <TouchableOpacity onPress={onPress}>
+    <Text style={Styles.title}>{item.title}</Text>
     <Image source={{ uri: item.image }} />
   </TouchableOpacity>
 );
@@ -54,65 +55,56 @@ const App = (props) => {
   }, []);
 
   const renderItem = ({ item }) => {
-    const color = item.id === selectedId ? 'white' : 'black';
-
     return (
-      <View style={[styles.container]}>
-        <TouchableHighlight
-          onPress={() => openLink(item.url)}>
-        <Image 
-          style={styles.image}
-          source={{ uri: item.image }} 
-        />
-        </TouchableHighlight>
+      <View style={[Styles.box]}>
         <Item
           item={item}
           onPress={() => openLink(item.url)}
-          textColor={{ color }}
-        />    
+        />
+        <TouchableOpacity
+          onPress={() => openLink(item.url)}>
+        <Image 
+          style={Styles.image}
+          source={{ uri: item.image }} 
+        />
+        </TouchableOpacity>
+        <View style={Styles.button}>
+            <Button
+                type="solid"
+                title="Read more"
+                color="#F55243"
+                size={6}
+                onPress={(e) => {
+                    e.preventDefault();
+                    openLink('http://www.cascade.org' + item.url);
+            }}
+            />
+        </View>
       </View>
     );
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={Styles.container}>
+        {
+            refreshing ? (
+                <ActivityIndicator
+                    style={Styles.loadingIndicator}
+                    animating={true}
+                    visible={refreshing}
+                    size="large"
+                    color="#0176ae" />
+            )
+            :
       <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={(data) => data.title}
         extraData={selectedId}
       />
+        }
     </SafeAreaView>
   );
 };
-
-// Styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 0,
-    flexDirection:'column', 
-    justifyContent:'center',
-    backgroundColor: '#0176ae',
-  },
-  image: {
-    width: '100%',
-    height: 300,
-    backgroundColor: "grey",
-    borderWidth: 1,
-  },
-  item: {
-    borderWidth: .5,
-    padding: 5,
-    paddingLeft: 10,
-    marginVertical: 0,
-    marginHorizontal: 0,
-    marginBottom: 0,
-
-  },
-  title: {
-    fontSize: 26,
-  },
-});
 
 export default App;

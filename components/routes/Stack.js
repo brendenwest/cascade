@@ -29,7 +29,7 @@ export default function HomeStack() {
         name="Daily Rides"
         component={DailyRidesScreen}
         options={{
-          title: 'Daily Featured Featured Rides',
+          title: 'Daily Featured Rides',
         }}
       />
       <Stack.Screen

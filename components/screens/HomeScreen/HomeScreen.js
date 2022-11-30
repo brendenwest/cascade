@@ -8,16 +8,16 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={Styles.container}>
-      <ImageBackground source={{ uri: 'https://images.squarespace-cdn.com/content/v1/554265d0e4b00f9b9e16638f/1612648585952-GPZAB4WG9BYFDKKNLZFI/pqA9EUPw.jpeg?format=2500w' }} resizeMode="cover">
+      <ImageBackground style={Styles.imgBackground} source={{ uri: 'https://images.squarespace-cdn.com/content/v1/554265d0e4b00f9b9e16638f/1612648585952-GPZAB4WG9BYFDKKNLZFI/pqA9EUPw.jpeg?format=2500w' }}>
         <View style={Styles.ridesBtnContainer}>
           <Button
             title='Daily Featured Rides'
             type='clear'
             buttonStyle={{
-              backgroundColor: 'rgba(127, 220, 103, 1)',
-              borderWidth: 2,
-              borderColor: 'black',
-              borderRadius: 50,
+                backgroundColor: '#5de36d',
+                borderWidth: 3,
+                borderColor: 'white',
+                borderRadius: 50,
             }}
             containerStyle={{
               width: 250,
@@ -25,12 +25,12 @@ const HomeScreen = ({ navigation }) => {
             }}
             titleStyle={{
               fontWeight: 'bold',
-              fontSize: 40
+              fontSize: 40,
             }}
             icon={
               <Icon
                 name="bicycle"
-                size={55}
+                size={50}
                 color="#0176ae"
               />
             }
