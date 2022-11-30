@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
     flexDirection:'column', 
     justifyContent:'center',
-    backgroundColor: '#0176ae',
+    backgroundColor: '#ffffff',
   },
   image: {
     width: '100%',

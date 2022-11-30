@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import AboutScreen from "../screens/AboutScreen/AboutScreen";
 import ContactScreen from "../screens/ContactScreen/ContactScreen";
 import AdvocacyScreen from '../screens/AdvocacyScreen/AdvocacyScreen.js';
+import ResourcesScreen from '../screens/Resources/ResourcesScreen.js';
 
 
 const Drawer = createDrawerNavigator();
@@ -26,6 +27,8 @@ export const DefaultDrawer = () => {
             iconName = 'phone';
           } else if (route.name === "Advocacy") {
             iconName = 'team';
+          } else if (route.name === "Resources") {
+            iconName = 'cloudo';
           }
           return <Icon name={iconName} size={size} color={color} />
         },
@@ -62,6 +65,15 @@ export const DefaultDrawer = () => {
             )
           })} />
         <Drawer.Screen name="Advocacy" component={AdvocacyScreen}
+          options={({ navigation }) => ({
+            headerLeft: () => (
+              <HeaderBackButton
+                tintColor={'white'}
+                onPress={() => navigation.goBack()}
+              />
+            )
+          })} />
+        <Drawer.Screen name="Resources" component={ResourcesScreen}
           options={({ navigation }) => ({
             headerLeft: () => (
               <HeaderBackButton
