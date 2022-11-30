@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import AboutScreen from "../screens/AboutScreen/AboutScreen";
 import ContactScreen from "../screens/ContactScreen/ContactScreen";
 import AdvocacyScreen from '../screens/AdvocacyScreen/AdvocacyScreen.js';
-
+import ClassesScreen from "../screens/ClassesScreen/ClassesScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +27,9 @@ export const DefaultDrawer = () => {
           } else if (route.name === "Advocacy") {
             iconName = 'team';
           }
-          return <Icon name={iconName} size={size} color={color} />
+          else if (route.name === "Classes") {
+          iconName = 'play';
+        }return <Icon name={iconName} size={size} color={color} />  
         },
         headerStyle: { backgroundColor: '#0176ae' },
         headerTintColor: 'white',
@@ -70,7 +72,15 @@ export const DefaultDrawer = () => {
               />
             )
           })} />
-      </Drawer.Group>
+              <Drawer.Screen name="Classes" component={ClassesScreen}
+          options={({ navigation }) => ({
+            headerLeft: () => (
+              <HeaderBackButton
+                tintColor={'white'}
+                onPress={() => navigation.goBack()}
+              />
+            )
+          })} /></Drawer.Group>
     </Drawer.Navigator>
   );
 };
