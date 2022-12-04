@@ -76,7 +76,7 @@ const App = (props) => {
                 size={6}
                 onPress={(e) => {
                     e.preventDefault();
-                    openLink('http://www.cascade.org' + item.url);
+                    openLink(item.url);
             }}
             />
         </View>

@@ -9,6 +9,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       <ImageBackground style={Styles.imgBackground} source={{ uri: 'https://images.squarespace-cdn.com/content/v1/554265d0e4b00f9b9e16638f/1612648585952-GPZAB4WG9BYFDKKNLZFI/pqA9EUPw.jpeg?format=2500w' }}>
+      <View style ={Styles.box}>
         <View style={Styles.ridesBtnContainer}>
           <Button
             title='Daily Featured Rides'
@@ -96,6 +97,7 @@ const HomeScreen = ({ navigation }) => {
             <Image style={Styles.btnImage} source={{ uri: "https://cascade.org/sites/all/themes/f1omega/f1ux/images/bikerbg-purple.png" }} />
           </TouchableOpacity>
         </View>
+      </View>
       </ImageBackground>
     </View>   
   );

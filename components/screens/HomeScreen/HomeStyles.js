@@ -1,11 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const {height, width} = Dimensions.get('window');
 
 export const Styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    box: {
+       padding: 10,
+    },
     webBtnContainer: {
-        padding: 10,
+
+
     },
     imgBackground: {
         width: '100%',
@@ -15,40 +21,37 @@ export const Styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     joinBtn: {
-        marginTop: 120,
         backgroundColor: '#f55243',
-        marginBottom: 17,
-        display: 'flex',
+        marginBottom: 15,
         alignItems: 'center',
-        flexDirection: "row",
-        justifyContent: "space-between",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     volunteerBtn: {
         backgroundColor: '#fd9b00',
-        marginBottom: 17,
-        display: 'flex',
+        marginBottom: 15,
         alignItems: 'center',
-        flexDirection: "row",
-        justifyContent: "space-between",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     donateBtn: {
         backgroundColor: '#7b146b',
-        display: 'flex',
+        marginBottom: 15,
         alignItems: 'center',
-        flexDirection: "row",
-        justifyContent: "space-between",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     ridesBtnContainer: {
+        marginTop: 15,
         alignItems: 'center',
-        marginTop: 100,
     },
     btnImage: {
-        height: 100,
-        width: 200,
+        height: height * .1,
+        width: width * .3 ,
     },
     btnText: {
         color: 'white',
-        fontSize: 25,
+        fontSize: 20,
         padding: 10,
         fontFamily: 'Helvetica',
         fontWeight: 'bold',

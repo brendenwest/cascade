@@ -64,7 +64,7 @@ export default class App extends React.Component {
       });
   }
   renderItemComponent = ({ item }) => {
-    let color = item.id === this.state.selectedId ? 'white' : '#64c5e8';
+    let color = item.id === this.state.selectedId ? '#64c5e8' : '#64c5e8';
 
     if (item.title.slice(0, 1) === "*") {
       color = 'red';
