@@ -6,6 +6,27 @@ import InAppBrowser from 'react-native-inappbrowser-reborn';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Styles } from './AdvocacyStyles';
 
+async function openLink(urlToOpen) {
+  try {
+    if (await InAppBrowser.isAvailable()) {
+      const result = await InAppBrowser.open(urlToOpen, {
+        showTitle: false,
+        toolbarColor: '#0176ae',
+        secondaryToolbarColor: 'black',
+        navigationBarColor: 'black',
+        navigationBarDividerColor: 'white',
+        enableUrlBarHiding: true,
+        enableDefaultShare: true,
+        forceCloseOnRedirection: false,
+        hasBackButton: true,
+      })
+    }
+    else Linking.openURL(urlToOpen)
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
 const AdvocacyScreen = () => {
 
   const [advocacy, setAdvocacy] = useState([]);
@@ -32,7 +53,7 @@ const AdvocacyScreen = () => {
         {
           loading ? (
               <ActivityIndicator
-                  style={Styles.indicator}
+                  style={Styles.loadingIndicator}
                   animating={true}
                   visible={loading}
                   size="large"
@@ -41,25 +62,28 @@ const AdvocacyScreen = () => {
             :
             advocacy.map(({ title, url, image }) => (
               <View key={url} style={Styles.box}>
+                  <Text style={Styles.titles}
+                    onPress={(e) => {
+                        e.preventDefault();
+                        openLink('https://cascade.org' + url);
+                    }}
+                  >{title}</Text>
                   <Image key={image}
                     source={{ uri: image }}
                     style={Styles.image}
                   />
-                  <Text style={Styles.titles}
-                    onPress={() =>
-                      InAppBrowser.open("https://cascade.org" + url, {
-                        showTitle: false,
-                        toolbarColor: '#0176ae',
-                        secondaryToolbarColor: 'black',
-                        navigationBarColor: 'black',
-                        navigationBarDividerColor: 'white',
-                        enableUrlBarHiding: true,
-                        enableDefaultShare: true,
-                        forceCloseOnRedirection: false,
-                        hasBackButton: true,
-                      })
-                    }
-                  > {title} </Text>
+                  <View key={url} style={Styles.button}>
+                    <Button
+                      type="solid"
+                      title="Read more"
+                      color="#F55243"
+                      size={6}
+                      onPress={(e) => {
+                        e.preventDefault();
+                        openLink('https://cascade.org' + url);
+                      }}
+                    />
+                  </View>
               </View>
             ))
         }

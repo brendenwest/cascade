@@ -1,35 +1,40 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const {height, width} = Dimensions.get('window');
 
 export const Styles = StyleSheet.create({
     container: {
         flex: 1,
     },
     box: {
-        alignItems: 'center',
-        margin: 7,
-        marginLeft: 20,
-        marginRight:20,
-        padding: 20,
-        backgroundColor: '#ebf0f5',
-        borderColor: '#cae1fa',
-        borderWidth: 3,
-        borderStyle: 'solid',
+        marginLeft: 30,
+        borderLeftWidth: 10,
+        borderColor: '#464a54',
         borderRadius: 10,
+        margin: 20,
+        padding: 15,
+        backgroundColor: '#eeeeee',
     },
     titles: {
-        marginTop: 10,
         fontSize: 30,
+        color: '#64c5e8',
         fontWeight: 'bold',
-        color: '#10768f'
+        margin: 5,
     },
     image: {
-        borderColor: '#cae1fa',
-        borderWidth: 3,
-        borderRadius: 20,
-        width: 500,
-        height: 300,
+        width: width * .8,
+        height: height * .3,
+        resizeMode: 'stretch',
+        borderRadius: 3,
+        marginBottom: 15,
+        marginTop: 5,
     },
-    indicator: {
+    button: {
+        width: 200,
+        height: 50,
+        alignSelf: 'center',
+    },
+    loadingIndicator: {
         marginTop: 100
     }
 });
