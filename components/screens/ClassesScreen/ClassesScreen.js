@@ -53,18 +53,17 @@ const ClassesScreen = () => {
         {
           loading ?
             (
-              <View style={Styles.container}>
+              <View style={Styles.loadingIndicator}>
                 <ActivityIndicator
                   animating={true}
                   visible={loading}
                   size="large"
-                  color="#0176ae"
-                  textContent={'Loading...'} />
+                  color="#0176ae" />
               </View>
             )
             :
             data.map(({ title, body, url, image }) => (
-              <View key={url} >
+              <View key={url} style={Styles.box}>
                 <Text key={title} style={Styles.title}>
                   {title}
                 </Text>
@@ -82,7 +81,7 @@ const ClassesScreen = () => {
                     size={6}
                     onPress={(e) => {
                       e.preventDefault();
-                      openLink(url)
+                      openLink(url);
                     }}
                   />
                 </View>
