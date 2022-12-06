@@ -20,15 +20,13 @@ export default App = ({route, navigation}) => {
             }, []));
     if (loading) {
         return(
-            <View style={Styles.container}>
             <ActivityIndicator
-            animating={true}
-            visible={loading}
-            size="large"
-            color="#0176ae"
-            textContent={'Loading...'} />
-            </View> 
-        ) 
+                style={Styles.loadingIndicator}
+                animating={true}
+                visible={loading}
+                size="large"
+                color="#0176ae" />
+            )
     }
         return (
             <View style={Styles.container}>

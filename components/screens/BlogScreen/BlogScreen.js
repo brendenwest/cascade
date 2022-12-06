@@ -53,27 +53,26 @@ const BlogScreen = () => {
         {
           loading ?
             (
-              <View style={Styles.container}>
-                <ActivityIndicator
+              <ActivityIndicator
+                  style={Styles.loadingIndicator}
                   animating={true}
                   visible={loading}
                   size="large"
-                  color="#0176ae"
-                  textContent={'Loading...'} />
-              </View>
+                  color="#0176ae" />
             )
             :
-            data.map(({ title, postDate, body, url, image }) => (
-              <View key={url}>
+            data.map(({ title, postDate, body, url, image, category}) => (
+              <View key={url} style={Styles.box}>
                 <Text key={title} style={Styles.title}>
                   {title}
                 </Text>
                 <Text style={Styles.date}
-                  key={postDate}>{postDate}</Text>
+                  key={postDate}>- {postDate}</Text>
+                <Text style={Styles.category}
+                  key={category}>{category}</Text>
                 <Image key={image}
                   source={{ uri: image }}
                   style={Styles.image}
-
                 />
                 <Text key={body} style={Styles.blogItem} >{body}</Text>
                 <View key={url} style={Styles.button}>
@@ -89,6 +88,7 @@ const BlogScreen = () => {
                   />
                 </View>
               </View>
+
             ))
         }
       </ScrollView>

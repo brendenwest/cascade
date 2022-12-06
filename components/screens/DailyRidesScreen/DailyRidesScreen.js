@@ -1,14 +1,13 @@
 import React from 'react';
 import { Styles } from './DailyRidesStyles'
-import { SafeAreaView, Text, FlatList, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native';
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  <TouchableOpacity onPress={onPress} style={[Styles.item, backgroundColor]}>
+const Item = ({ item, onPress, textColor }) => (
+  <TouchableOpacity onPress={onPress} style={[Styles.item]}>
     <Text style={[Styles.title, textColor]}>{item.title}</Text>
-    <Text style={[Styles.text, textColor]}>When: {item.date} </Text>
-    <Text style={[Styles.text, textColor]}>Pace: {item.pace} </Text>
-    <Text style={[Styles.text, textColor]}>Distance: {item.distance}</Text>
-    <Text style={[Styles.text, textColor]}>{item.leader}</Text>
+    <Text style={Styles.text}>- {item.date} </Text>
+    <Text style={Styles.text}>{item.pace + "   " + item.distance}</Text>
+    <Text style={Styles.text}>{item.leader}</Text>
   </TouchableOpacity>
 );
 const currentDate = new Date(Date.now()); // get current date
@@ -65,10 +64,8 @@ export default class App extends React.Component {
       });
   }
   renderItemComponent = ({ item }) => {
-    const backgroundColor = item.id === this.state.selectedId ? '#787a7d' : '#e1e3e6';
-    let color = item.id === this.state.selectedId ? 'white' : 'black';
+    let color = item.id === this.state.selectedId ? '#64c5e8' : '#64c5e8';
 
-    // If ride is cancelled, change color to red
     if (item.title.slice(0, 1) === "*") {
       color = 'red';
     }
@@ -82,7 +79,6 @@ export default class App extends React.Component {
           this.props.navigation.navigate ('Individual Ride', {
             url: item.url, }); //passing url props to the next screen 'Individual Ride'
         }}
-        backgroundColor={{ backgroundColor }}
         textColor={{ color }}
       />
     );
@@ -95,6 +91,16 @@ export default class App extends React.Component {
   render() {
     return (
       <SafeAreaView style={Styles.container}>
+        {
+            this.state.refreshing ? (
+                <ActivityIndicator
+                    style={Styles.loadingIndicator}
+                    animating={true}
+                    visible={this.state.refreshing}
+                    size="large"
+                    color="#0176ae" />
+            )
+            :
         <FlatList
           data={this.state.data}
           renderItem={(item) => {
@@ -105,13 +111,13 @@ export default class App extends React.Component {
             if (rideDate === today) {
               return this.renderItemComponent(item)
             };
-          }
-          }
+          }}
           keyExtractor={item => item.id.toString()}
           ItemSeparatorComponent={this.ItemSeparator}
           refreshing={this.state.refreshing}
           onRefresh={this.handleRefresh}
         />
+        }
       </SafeAreaView>
     )
   }
